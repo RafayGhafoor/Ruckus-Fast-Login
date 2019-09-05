@@ -14,7 +14,8 @@ def get_credentials(filepath='credentials.txt', debug=0):
 
 
 def main():
-    username, password = get_credentials()
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+    username, password = get_credentials(debug=1)
 
     login_url = 'https://scg.ruckuswireless.com:9998/forms/user_login?username=%s&password=%s&ok=Log+In' % (
         username, password)
