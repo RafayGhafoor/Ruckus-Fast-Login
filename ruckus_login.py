@@ -20,7 +20,7 @@ def main():
         username, password)
 
     try:
-        r = requests.post(login_url, verify=False, timeout=1)
+        r = requests.get(login_url, verify=False)
         print("Request Succesful at endpoint:\n\n>>> ", r.url)
 
     #TODO: Proper error handling
